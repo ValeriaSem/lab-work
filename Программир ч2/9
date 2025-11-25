@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    double product = 1.0;
+    
+    printf("Введите число N: ");
+    scanf("%d", &N);
+    
+    for (int i = 1; i <= N; i++) {
+        product *= 1.0 + i * 0.1;
+    }
+    
+    printf("Произведение = %f\n", product);
+    
+    return 0;
+}
