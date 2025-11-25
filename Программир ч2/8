@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int N, sum = 0;
+    
+    printf("Введите число N: ");
+    scanf("%d", &N);
+    
+    for (int i = 0; i <= N; i++) {
+        sum += (N + i) * (N + i);
+    }
+    
+    printf("Сумма = %d\n", sum);
+    
+    return 0;
+}
