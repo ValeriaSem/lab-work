@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int h, m;
+    printf("Введите час и минуты: ");
+    scanf("%d %d", &h, &m);
+    int time = h * 60 + m;
+    if (time >= 4*60+1 && time <= 10*60) {
+        printf("утро\n");
+    }
+    else if (time >= 10*60+1 && time <= 17*60) {
+        printf("день\n");
+    }
+    else if (time >= 17*60+1 && time <= 23*60) {
+        printf("вечер\n");
+    }
+    else {
+        printf("ночь\n");
+    }
+    return 0;
+}
