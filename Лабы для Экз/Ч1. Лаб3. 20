@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Введите число: ");
+    scanf("%d", &n);
+    int a = n / 100;        
+    int b = (n / 10) % 10;    
+    int c = n % 10;        
+    
+    if (a != b && a != c && b != c) {
+        printf("Да, все цифры разные\n");
+    } else {
+        printf("Нет, есть одинаковые цифры\n");
+    }
+    return 0;
+}
