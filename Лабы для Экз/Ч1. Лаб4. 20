@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float A, B, C;
+    printf("Введите координаты A, B, C: ");
+    scanf("%f %f %f", &A, &B, &C);
+    float d1 = fabs(B - A); 
+    float d2 = fabs(C - A);  
+    if (d1 < d2) {
+        printf("Точка B ближе\n");
+        printf("Расстояние: %.2f\n", d1);
+    } 
+    else if (d2 < d1) {
+        printf("Точка C ближе\n");
+        printf("Расстояние: %.2f\n", d2);
+    } 
+    else {
+        printf("Одинаково близко\n");
+        printf("Расстояние: %.2f\n", d1);
+    }
+    return 0;
+}
