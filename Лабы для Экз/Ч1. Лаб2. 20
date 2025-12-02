@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    printf("Введите количество секунд N: ");
+    scanf("%d", &N);
+    int minutes = N / 60;
+    printf("С начала суток прошло %d полных минут\n", minutes);
+    return 0;
+}
