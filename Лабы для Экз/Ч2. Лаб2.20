@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n; 
+    printf("Введите число: ");
+    scanf("%d", &n);
+    int has_odd = 0;  
+    while (n > 0 && !has_odd) {
+        int digit = n % 10;  
+        if (digit % 2 == 1) { 
+            has_odd = 1;
+        }
+        n = n / 10; 
+    } 
+    if (has_odd) {
+        printf("TRUE\n");
+    } else {
+        printf("FALSE\n");
+    }   
+    return 0;
+}
