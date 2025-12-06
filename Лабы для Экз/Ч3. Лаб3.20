@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+float Norm2(float A[][10], int M, int N) {
+    float max = 0;    
+    for (int i = 0; i < M; i++) {
+        float sum = 0;
+        for (int j = 0; j < N; j++) {
+            if (A[i][j] < 0) {
+                sum -= A[i][j];  
+            } else {
+                sum += A[i][j]; 
+            }
+        }
+        if (sum > max) {
+            max = sum;
+        }
+    }   
+    return max;
+}
+int main() {
+    float A[10][10];
+    int M, N;
+    printf("Введите M и N: ");
+    scanf("%d %d", &M, &N);
+    printf("Введите матрицу:\n");
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            scanf("%f", &A[i][j]);
+        }
+    }
+    printf("\nНормы:\n");
+    for (int K = 1; K <= M; K++) {
+        printf("K=%d: %.2f\n", K, Norm2(A, K, N));
+    }  
+    return 0;
+}
