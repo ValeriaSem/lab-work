@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    FILE *f;
+    double a, b, c;
+    int count = 0;
+    f = fopen("numbers.txt", "r");
+    if (f == NULL) {
+        printf("Не могу открыть файл\n");
+        return 1;
+    }
+    if (fscanf(f, "%lf %lf %lf", &a, &b, &c) != 3) {
+        printf("В файле меньше 3 чисел\n");
+        fclose(f);
+        return 0;
+    }
+    while (1) {
+        if ((b > a && b > c) || (b < a && b < c)) {
+            count++;
+        }
+        a = b;
+        b = c;
+        if (fscanf(f, "%lf", &c) != 1) {
+            break;
+        }
+    } 
+    fclose(f);
+    printf("Локальных экстремумов: %d\n", count);
+    return 0;
+}
