@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+void OneChar(const char *S, char *S0) {
+    int count[256] = {0};  
+    int len = strlen(S);   
+    for (int i = 0; i < len; i++) {
+        count[(unsigned char)S[i]]++;
+    }
+    int pos = 0;
+    for (int i = 0; i < len; i++) {
+        if (count[(unsigned char)S[i]] == 1) {
+            S0[pos++] = S[i];
+        }
+    }
+    S0[pos] = '\0';  
+}
+int main() {
+    char S[100], S0[100];
+    printf("Введите строку: ");
+    fgets(S, sizeof(S), stdin); 
+    S[strcspn(S, "\n")] = '\0';  
+    OneChar(S, S0);
+    printf("Исходная строка: %s\n", S);
+    printf("Символы, встречающиеся один раз: %s\n", S0);
+    return 0;
+}
